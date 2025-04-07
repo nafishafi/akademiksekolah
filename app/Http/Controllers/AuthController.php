@@ -12,6 +12,6 @@ class AuthController extends Controller
             'title' => 'Login Page'
         );
 
-        return view('index');
+        return view('index', $data);
     }
 }
