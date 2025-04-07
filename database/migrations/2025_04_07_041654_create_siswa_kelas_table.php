@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('siswa_kelas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tbl_siswakelas', function (Blueprint $table) {
+            $table->bigInteger('id')->primary();
+            $table->bigInteger('id_siswa');
+            $table->bigInteger('id_kelas');
+            // $table->foreign('id_siswa')->references('id')->on('tbl_siswa');
+            // $table->foreign('id_kelas')->references('id')->on('tbl_kelas');
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('siswa_kelas');
+        Schema::dropIfExists('tbl_siswakelas');
     }
 };

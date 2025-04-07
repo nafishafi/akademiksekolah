@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mapels', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tbl_mapel', function (Blueprint $table) {
+            $table->bigInteger('id')->primary();
+            $table->string('nama_mapel')->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mapels');
+        Schema::dropIfExists('tbl_mapel');
     }
 };

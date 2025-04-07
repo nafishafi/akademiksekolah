@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipe_kelas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tbl_tipekelas', function (Blueprint $table) {
+            $table->bigInteger('id')->primary();
+            $table->string('nama_tipekelas')->nullable();
+
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipe_kelas');
+        Schema::dropIfExists('tbl_tipekelas');
     }
 };
